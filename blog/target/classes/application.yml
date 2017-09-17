@@ -1,0 +1,27 @@
+server:
+  port: 8090
+  context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  type-aliases-package: cn.haha.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml

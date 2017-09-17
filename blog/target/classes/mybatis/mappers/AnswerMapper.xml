@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.haha.mapper.AnswerMapper">
+<select id="findEmailByName" resultType="Friend">
+select * from friend where user_name=#{userName}
+</select>
+ <insert id="saveAnswer">
+  insert into answer (user_name,answer,create_time) values (#{userName},#{answer},#{createTime})
+ </insert>
+ <select id="findAll" resultType="Answer">
+  select * from answer
+ </select>
+ </mapper>

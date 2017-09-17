@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.haha.mapper.ArticleMapper">
+    <select id="findAll" resultType="Article">
+        select *  from article
+    </select>
+
+    <select id="findArticleById" resultType="Article">
+        select * from article where article_id =#{articleId}
+    </select>
+
+    <select id="findAarticleByType" resultType="Article">
+   select * from article where article_type_id =#{articleTypeId}
+	 </select>
+	 <update id="updateReadTime">
+	 	update  article set read_time =#{count} where article_id =#{id}
+	 </update>
+	 <select id="findAllByOrder"  resultType="Article">
+	 	select *  from article  order by read_time desc limit 3 
+	 </select>
+	 
+	  <select id="findSort"  resultType="Article">
+	 	select *  from article  order by read_time desc 
+	 </select>
+ </mapper>
